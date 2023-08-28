@@ -41,11 +41,11 @@ def visualize_box_and_labels(
     return image
 
 
-cap = cv.VideoCapture(0)
+cam = cv.VideoCapture(0)
 qcd = cv.QRCodeDetector()
 
 while True:
-    img = cap.read()[1]
+    img = cam.read()[1]
     imGray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
     ret_qr, decoded_info, points, _ = qcd.detectAndDecodeMulti(imGray)
@@ -56,5 +56,5 @@ while True:
     if cv.waitKey(2) == 27:  # esc
         break
 
-cap.release()
+cam.release()
 cv.destroyAllWindows()
