@@ -4,5 +4,5 @@
 
 ## Install
 ```
-pip install --upgrade opencv-contrib-python
+pip install --upgrade opencv-python
 ```
