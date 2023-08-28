@@ -46,9 +46,9 @@ qcd = cv.QRCodeDetector()
 
 while True:
     img = cap.read()[1]
-    gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    imGray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
-    ret_qr, decoded_info, points, _ = qcd.detectAndDecodeMulti(gray)
+    ret_qr, decoded_info, points, _ = qcd.detectAndDecodeMulti(imGray)
     if ret_qr:
         visualize_box_and_labels(img, decoded_info, points)
 
